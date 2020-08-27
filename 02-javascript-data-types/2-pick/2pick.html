@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>2-pick</title>
+</head>
+<body>
+<script>
+  const pick = (obj, ...fields) => {
+    let sortedObject = {};
+    fields.forEach(entry=>{
+      if (entry in obj){
+        sortedObject[entry] = obj[entry]
+      }})
+    return sortedObject
+  };
+</script>>
+</body>
+</html>
