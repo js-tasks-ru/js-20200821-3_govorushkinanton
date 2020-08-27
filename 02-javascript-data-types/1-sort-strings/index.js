@@ -5,5 +5,22 @@
  * @returns {string[]}
  */
 export function sortStrings(arr, param = 'asc') {
-
+  let sortedArray = [];
+  if (param === 'asc' || param === undefined){
+    Object.assign(sortedArray, arr.sort(function (a, b) {
+      {
+        return a.localeCompare(b, undefined, {caseFirst:'upper'})
+      }
+    }));
+    return sortedArray;
+  }
+  else if (param === 'desc') {
+    Object.assign(sortedArray, arr.sort(function (a,b) {
+      return b.localeCompare(a, undefined, {caseFirst:'upper'})
+    }));
+    return sortedArray;
+  }
+  else {
+    throw new Error('Invalid sorting order specified. Please us either "asc" or "desc"' )
+  }
 }
