@@ -8,12 +8,12 @@
 <script>
   const pick = (obj, ...fields) => {
     let sortedObject = {};
-    fields.forEach(entry=>{
-      if (entry in obj){
+    fields.forEach(entry => {
+      if (entry in obj)
         sortedObject[entry] = obj[entry]
-      }})
-    return sortedObject
-  };
+    })
+    return sortedObject;
+  }
 </script>>
 </body>
 </html>
