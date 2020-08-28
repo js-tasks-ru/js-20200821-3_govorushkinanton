@@ -7,11 +7,11 @@
 export function sortStrings(arr, param = 'asc') {
   const sortedArray = [];
   if (param === 'asc' || param === undefined){
-    Object.assign(sortedArray, sortArray(arr));
+    Object.assign(sortedArray, sortArray(arr, 1));
     return sortedArray;
   }
   else if (param === 'desc') {
-    Object.assign(sortedArray, sortArray(arr).reverse());
+    Object.assign(sortedArray, sortArray(arr, -1));
     return sortedArray;
   }
   else {
@@ -19,8 +19,8 @@ export function sortStrings(arr, param = 'asc') {
   }
 }
 
-function sortArray(array) {
+function sortArray(array, direction) {
   return array.sort(function (a, b) {
-    return a.localeCompare(b, undefined, {caseFirst:'upper'})
+    return direction * a.localeCompare(b, undefined, {caseFirst:'upper'})
   })
 }
