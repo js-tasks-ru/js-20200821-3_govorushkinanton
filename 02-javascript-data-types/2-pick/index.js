@@ -10,10 +10,11 @@
  * from https://learn.javascript.ru/object
  */
 export const pick = (obj, ...fields) => {
-  let sortedObject = {};
-  fields.forEach(entry=>{
-    if (entry in obj)
-      sortedObject[entry] = obj[entry]
-    })
+  const sortedObject = {};
+  for(let param in obj){
+    if (fields.find(fieldToPick => fieldToPick === param)){
+      sortedObject[param] = obj[param]
+    }
+  }
   return sortedObject
-};
+}

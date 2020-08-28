@@ -10,9 +10,11 @@
  * from https://learn.javascript.ru/object
  */
 export const omit = (obj, ...fields) => {
-  fields.forEach(entry=>{
-    if (entry in obj){
-      delete obj[entry]
-    }})
-  return obj
-};
+  const sortedObject = {};
+  for (let param in obj){
+    if (fields.find(fieldToOmit => fieldToOmit === param)){
+      delete obj[param]
+    }
+  }
+  return Object.assign(sortedObject, obj)
+}
