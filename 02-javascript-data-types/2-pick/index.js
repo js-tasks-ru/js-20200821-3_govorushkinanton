@@ -17,5 +17,6 @@ export const pick = (obj, ...fields) => {
       sortedObject[key] = value
     }
   }
+
   return sortedObject
 }

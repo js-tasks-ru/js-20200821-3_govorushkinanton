@@ -5,9 +5,12 @@
  */
 export function invertObj(obj) {
   if(!obj) return;
-  const objectEntries = Object.entries(obj)
+
+  const objectEntries = Object.entries(obj);
+
   objectEntries.map(entry => {
     entry.reverse();
   })
+
   return Object.fromEntries(objectEntries)
 }
