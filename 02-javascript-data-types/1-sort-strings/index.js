@@ -20,7 +20,8 @@ export function sortStrings(arr, param = 'asc') {
 }
 
 function sortArray(array, direction) {
-  return array.sort(function (a, b) {
+  const result = array.slice();
+  return result.sort(function (a, b) {
     return direction * a.localeCompare(b, undefined, {caseFirst:'upper'})
   })
 }

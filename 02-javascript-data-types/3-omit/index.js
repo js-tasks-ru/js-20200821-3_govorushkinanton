@@ -11,9 +11,9 @@
  */
 export const omit = (obj, ...fields) => {
   const sortedObject = {};
-  for (let param in obj){
-    if (fields.find(fieldToOmit => fieldToOmit === param)){
-      delete obj[param]
+  for (let [key, value] of Object.entries(obj)){
+    if (fields.find(fieldToOmit => fieldToOmit === key)){
+      delete obj[key]
     }
   }
   return Object.assign(sortedObject, obj)
