@@ -12,11 +12,11 @@
 export const omit = (obj, ...fields) => {
   const sortedObject = {};
 
-  for (let [key, value] of Object.entries(obj)){
-    if (fields.find(fieldToOmit => fieldToOmit === key)){
-      delete obj[key]
+  for (const key of Object.keys(obj)) {
+    if (!fields.includes(key)) {
+      sortedObject[key] = obj[key];
     }
   }
 
-  return Object.assign(sortedObject, obj)
+  return sortedObject;
 }

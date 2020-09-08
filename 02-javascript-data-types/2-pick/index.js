@@ -12,7 +12,7 @@
 export const pick = (obj, ...fields) => {
   const sortedObject = {};
 
-  for(let [key, value] of Object.entries(obj)){
+  for(const [key, value] of Object.entries(obj)){
     if (fields.find(fieldToPick => fieldToPick === key)){
       sortedObject[key] = value
     }
