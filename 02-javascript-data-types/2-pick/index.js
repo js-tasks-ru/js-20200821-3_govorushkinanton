@@ -4,6 +4,19 @@
  * @param {...string} fields - the properties paths to pick
  * @returns {object} - returns the new object
  */
-export const pick = (obj, ...fields) => {
 
-};
+/**
+ * Read about Object.entries(), but I found it better to apply knowledge
+ * from https://learn.javascript.ru/object
+ */
+export const pick = (obj, ...fields) => {
+  const sortedObject = {};
+
+  for(const [key, value] of Object.entries(obj)){
+    if (fields.find(fieldToPick => fieldToPick === key)){
+      sortedObject[key] = value
+    }
+  }
+
+  return sortedObject
+}
